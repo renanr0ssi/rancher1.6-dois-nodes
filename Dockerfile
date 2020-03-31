@@ -12,13 +12,6 @@ RUN mkdir -p /data/rancher
 #WORKDIR /usr/
 COPY locale /etc/default/
 
-#Cria o arquivo de PageFile:
-RUN fallocate -l 4G /swapfile
-RUN chmod 600 /swapfile
-RUN mkswap /swapfile
-RUN swapon /swapfile
-RUN '/swapfile none swap sw 0 0' | tee -a /etc/fstab
-
 # Atualiza a imagem com os pacotes
 RUN apt-get update && apt-get upgrade -y
 
@@ -26,3 +19,10 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install docker -y
 
 CMD ping 127.0.0.1
+
+#Cria o arquivo de PageFile (não usa mais pois a imagem do Ubuntu ja vem com pagefile setada):
+#RUN fallocate -l 4G /swapfile
+#RUN chmod 600 /swapfile
+#RUN mkswap /swapfile
+#RUN swapon /swapfile
+#RUN '/swapfile none swap sw 0 0' | tee -a /etc/fstab
