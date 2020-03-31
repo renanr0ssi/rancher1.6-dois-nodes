@@ -11,7 +11,6 @@ RUN mkdir -p /data/rancher
 #Copia arquivo locale ajustado para dentro da imagem:
 #WORKDIR /usr/
 COPY locale /etc/default/
-RUN source /etc/default/locale
 
 #Cria o arquivo de PageFile:
 RUN fallocate -l 4G /swapfile
