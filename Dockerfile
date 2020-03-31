@@ -12,5 +12,8 @@ RUN mkdir -p /data/rancher
 #WORKDIR /usr/
 COPY locale /etc/default/
 
+# Atualiza a imagem com os pacotes
+RUN apt-get update && apt-get upgrade -y
+
 #Instala Docker:
 RUN apt-get install docker -y
