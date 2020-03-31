@@ -13,4 +13,4 @@ RUN mkdir -p /data/rancher
 COPY locale /etc/default/
 
 #Instala Docker:
-RUN apt install docker -y
+RUN apt-get install docker -y
