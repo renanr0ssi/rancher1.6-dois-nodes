@@ -17,3 +17,5 @@ RUN apt-get update && apt-get upgrade -y
 
 #Instala Docker:
 RUN apt-get install docker -y
+
+CMD /data/rancher
