@@ -5,8 +5,8 @@ FROM ubuntu
 LABEL MAINTAINER="Renan Rossi"
 
 #Cria o diretório que será utilizado como volume:
-WORKDIR /
-RUN mkdir /data/rancher
+#WORKDIR /
+RUN mkdir -p /data/rancher
 
 #Copia arquivo locale ajustado para dentro da imagem:
 #WORKDIR /usr/
