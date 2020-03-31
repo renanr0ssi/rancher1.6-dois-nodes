@@ -18,7 +18,7 @@ RUN apt-get update && apt-get upgrade -y
 #Instala Docker:
 RUN apt-get install docker -y
 
-CMD ping 127.0.0.1
+
 
 #Cria o arquivo de PageFile (não usa mais pois a imagem do Ubuntu ja vem com pagefile setada):
 #RUN fallocate -l 4G /swapfile
