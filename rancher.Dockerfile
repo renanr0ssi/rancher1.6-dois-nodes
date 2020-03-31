@@ -18,6 +18,8 @@ RUN apt-get update && apt-get upgrade -y
 #Instala Docker:
 RUN apt-get install docker -y
 
+#Sobe um container de Rancher com persistencia de dados:
+RUN docker run -d -v /data/rancher:/var/lib/mysql --restart=unless-stopped -p 8080:8080 rancher/server
 
 
 #Cria o arquivo de PageFile (não usa mais pois a imagem do Ubuntu ja vem com pagefile setada):
